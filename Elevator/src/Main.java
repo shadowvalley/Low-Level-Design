@@ -23,5 +23,10 @@ public class Main {
         Request d1 = new Request(elevator.currentFloor, 4, Location.INSIDE, Direction.DOWN);
         Request d2 = new Request(elevator.currentFloor, 1, Location.INSIDE, Direction.DOWN);
         Request d3 = new Request(4, 2, Location.OUTSIDE, Direction.DOWN);
+
+        // Add DOWN requests to the queue
+        elevator.addDownRequestsToQueue(d1);
+        elevator.addDownRequestsToQueue(d2);
+        elevator.addDownRequestsToQueue(d3);
     }
 }

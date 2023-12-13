@@ -36,4 +36,21 @@ public class Elevator {
         System.out.printf("UP request => Current Floor -> %d and Desired Floor -> %d from Location -> %s",
                 upRequest.currentFloor, upRequest.desiredFloor, upRequest.elevatorState.toString());
     }
+
+    // Add DOWN request to the queue
+    public void addDownRequestsToQueue(Request downRequest) {
+        if (downRequest.elevatorState == Location.OUTSIDE) {
+            downRequests.offer(new Request(
+                    downRequest.currentFloor,
+                    downRequest.currentFloor,
+                    Location.OUTSIDE,
+                    Direction.DOWN
+            ));
+            System.out.printf("DOWN request => Current Floor -> %d and Desired Floor -> %d from Location -> %s",
+                    downRequest.currentFloor, downRequest.desiredFloor, downRequest.elevatorState.toString());
+        }
+        downRequests.offer(downRequest);
+        System.out.printf("DOWN request => Current Floor -> %d and Desired Floor -> %d from Location -> %s",
+                downRequest.currentFloor, downRequest.desiredFloor, downRequest.elevatorState.toString());
+    }
 }
