@@ -19,4 +19,18 @@ public class Board {
         board[row][col] = playingPiece;
         return true;
     }
+
+    // 2. Print the piece
+    void printBoard() {
+        for(int i=0; i<size; i++) {
+            for(int j=0;j<size; j++) {
+                if (board[i][j] != null) {
+                    System.out.print(board[i][j].pieceType.name() + "   ");
+                } else {
+                    System.out.print("    ");
+                }
+                System.out.print(" | ");
+            }
+        }
+    }
 }
