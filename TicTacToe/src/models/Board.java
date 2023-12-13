@@ -10,4 +10,13 @@ public class Board {
         this.size = size;
         this.board = new PlayingPiece[size][size];
     }
+
+    // 1. Add piece to Board
+    boolean addPieceToBoard(int row, int col, PlayingPiece playingPiece) {
+        if(board[row][col] != null) {
+            return false;
+        }
+        board[row][col] = playingPiece;
+        return true;
+    }
 }
