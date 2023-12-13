@@ -53,7 +53,7 @@ public class TicTacToe {
             boolean isPiecePlacedSuccessfully = playingBoard.addPieceToBoard(inputRow, inputColumn,
                     playerTurn.getPlayingPiece());
 
-            if(isPiecePlacedSuccessfully) {
+            if(!isPiecePlacedSuccessfully) {
                 //player can not insert the piece into this cell, player has to choose another cell
                 System.out.println("Incorrect position chosen, try again");
                 players.addFirst(playerTurn);
