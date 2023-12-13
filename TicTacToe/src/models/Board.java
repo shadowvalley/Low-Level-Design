@@ -1,17 +1,7 @@
 package models;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
-
-public class Pair<I extends Number, I1 extends Number> {
-    int row;
-    int col;
-    Pair(int row, int col) {
-        this.row = row;
-        this.col = col;
-    }
-}
 
 public class Board {
     public int size;
