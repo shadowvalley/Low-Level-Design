@@ -1,5 +1,18 @@
 package models;
 
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Pair<I extends Number, I1 extends Number> {
+    int row;
+    int col;
+    Pair(int row, int col) {
+        this.row = row;
+        this.col = col;
+    }
+}
+
 public class Board {
     public int size;
 
@@ -32,5 +45,18 @@ public class Board {
                 System.out.print(" | ");
             }
         }
+    }
+
+    // 3. Find all free cells
+    List<Pair<Integer, Integer>> getAllFreeCells() {
+        List<Pair<Integer, Integer>> freeCells = new ArrayList<>();
+        for(int i=0; i<size; i++) {
+            for(int j=0;j<size; j++) {
+                if(board[i][j] == null) {
+                    freeCells.add(new Pair<>(i, j));
+                }
+            }
+        }
+        return freeCells;
     }
 }
