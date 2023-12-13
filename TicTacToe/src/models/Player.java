@@ -1,11 +1,10 @@
 package models;
 
-import lombok.AllArgsConstructor;
-import lombok.Value;
+import lombok.*;
 
 @AllArgsConstructor
 @Value
 public class Player {
     public String name;
-    PieceType pieceType;
+    public PlayingPiece playingPiece;
 }
