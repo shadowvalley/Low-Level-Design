@@ -12,8 +12,10 @@ public class TicTacToe {
     // Initialise Game
     public void initialiseGame() {
         // Create players
-        Player player1 = new Player("Satyam", PieceType.X);
-        Player player2 = new Player("Shubham", PieceType.O);
+        PlayingPieceX crossPiece = new PlayingPieceX();
+        PlayingPieceO zeroPiece = new PlayingPieceO();
+        Player player1 = new Player("Satyam", crossPiece);
+        Player player2 = new Player("Shubham", zeroPiece);
         players.add(player1);
         players.add(player2);
 
