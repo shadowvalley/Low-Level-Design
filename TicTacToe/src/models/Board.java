@@ -15,7 +15,7 @@ public class Board {
     }
 
     // 1. Add piece to Board
-    boolean addPieceToBoard(int row, int col, PlayingPiece playingPiece) {
+    public boolean addPieceToBoard(int row, int col, PlayingPiece playingPiece) {
         if(board[row][col] != null) {
             return false;
         }
@@ -24,7 +24,7 @@ public class Board {
     }
 
     // 2. Print the piece
-    void printBoard() {
+    public void printBoard() {
         for(int i=0; i<size; i++) {
             for(int j=0;j<size; j++) {
                 if (board[i][j] != null) {
@@ -38,7 +38,7 @@ public class Board {
     }
 
     // 3. Find all free cells
-    List<Pair<Integer, Integer>> getAllFreeCells() {
+    public List<Pair<Integer, Integer>> getAllFreeCells() {
         List<Pair<Integer, Integer>> freeCells = new ArrayList<>();
         for(int i=0; i<size; i++) {
             for(int j=0;j<size; j++) {
@@ -48,5 +48,10 @@ public class Board {
             }
         }
         return freeCells;
+    }
+
+    // 4. Get piece type at (row,col)
+    public PieceType getPieceType(int row, int col) {
+        return board[row][col].pieceType;
     }
 }
