@@ -4,8 +4,8 @@ package Request;
  * Elevator Request Class
  * */
 public class Request {
-    int currentFloor;
-    int desiredFloor;
-    Location elevatorState;
-    Direction elevatorDirection;
+    public int currentFloor;
+    public int desiredFloor;
+    public Location elevatorState;
+    public Direction elevatorDirection;
 }
