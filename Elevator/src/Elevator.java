@@ -18,4 +18,5 @@ public class Elevator {
         upRequests = new PriorityQueue<>((a,b) -> a.desiredFloor - b.desiredFloor);
         downRequests = new PriorityQueue<>((a,b) -> b.desiredFloor - a.desiredFloor);
     }
+
 }

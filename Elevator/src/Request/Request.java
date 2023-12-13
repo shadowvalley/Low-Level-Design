@@ -1,8 +1,12 @@
 package Request;
 
+import lombok.AllArgsConstructor;
+
 /**
  * Elevator Request Class
  * */
+
+@AllArgsConstructor
 public class Request {
     public int currentFloor;
     public int desiredFloor;
