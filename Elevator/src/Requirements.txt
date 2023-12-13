@@ -1,0 +1,8 @@
+Goal -> To design Elevator
+
+Requirements ->
+1. Elevator can go UP or DOWN.
+2. Elevator can receive requests from both INSIDE and OUTSIDE.
+3. If Elevator receives both UP and DOWN request, it'll prioritize UP requests first and then DOWN.
+4. When elevator is going up or down, it will stop at all the floors that the users requested.
+5. Users can send requests at anytime.
