@@ -1,0 +1,9 @@
+Tic Tac Toe ->
+
+Requirements ->
+1. Should support N*N board
+2. Should support 2 people and should be extendable to more players
+
+Extra features
+-> User can connect to their social profile
+-> Get leaderboard ranking based on number of wins and loss
