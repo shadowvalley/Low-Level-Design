@@ -28,5 +28,8 @@ public class Main {
         elevator.addDownRequestsToQueue(d1);
         elevator.addDownRequestsToQueue(d2);
         elevator.addDownRequestsToQueue(d3);
+
+        // run the elevator
+        elevator.run();
     }
 }

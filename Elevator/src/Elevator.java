@@ -53,4 +53,57 @@ public class Elevator {
         System.out.printf("DOWN request => Current Floor -> %d and Desired Floor -> %d from Location -> %s",
                 downRequest.currentFloor, downRequest.desiredFloor, downRequest.elevatorState.toString());
     }
+
+    // Process all the UP requests
+    private void processUpRequest() {
+        while(!upRequests.isEmpty()) {
+            Request req = upRequests.poll();
+            this.currentFloor = req.desiredFloor; // SIMULATE GOING UP
+            System.out.println("Processing up requests. Elevator stopped at floor " + this.currentFloor + ".");
+        }
+
+        // Change elevator direction to DOWN
+        if(!downRequests.isEmpty()) {
+            this.direction = Direction.DOWN;
+        } else {
+            this.direction = Direction.IDLE;
+        }
+    }
+
+    // Process all the DOWN requests
+    private void processDownRequest() {
+        while(!downRequests.isEmpty()) {
+            Request req = downRequests.poll();
+            this.currentFloor = req.desiredFloor; // SIMULATE GOING DOWN
+            System.out.println("Processing down requests. Elevator stopped at floor " + this.currentFloor + ".");
+        }
+
+        // Change elevator direction to UP
+        if(!upRequests.isEmpty()) {
+            this.direction = Direction.UP;
+        } else {
+            this.direction = Direction.IDLE;
+        }
+    }
+
+    // Process Requests
+    private void processRequests() {
+        if(this.direction == Direction.UP || this.direction == Direction.IDLE) {
+            processUpRequest();
+            processDownRequest();
+        } else {
+            processDownRequest();
+            processUpRequest();
+        }
+    }
+
+    // Run all requests
+    public void run() {
+        while (!upRequests.isEmpty() || !downRequests.isEmpty()) {
+            processRequests();
+        }
+
+        System.out.println("Finished all requests.");
+        this.direction = Direction.IDLE;
+    }
 }
