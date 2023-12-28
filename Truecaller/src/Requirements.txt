@@ -1,0 +1,7 @@
+Requirements ->
+
+1. User can register themselves
+2. User can sync their contacts
+3. User can mark phone number as spam/not spam
+4. User can block/unblock numbers
+5. User can search from global directory
